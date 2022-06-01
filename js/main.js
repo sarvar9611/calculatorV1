@@ -1,0 +1,2 @@
+let displayText = "",
+    displayResult = "";
