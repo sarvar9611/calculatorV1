@@ -1,7 +1,7 @@
 let displayText = "",
     displayResult = "";
 
-const acBtn = document.querySelector("#acbtn"),
+let acBtn = document.querySelector("#acBtn"),
     eraseBtn = document.querySelector('#eraseBtn'),
     dotBtn = document.querySelector('#dotBtn'),
     divideBtn = document.querySelector('#divideBtn'),
@@ -21,8 +21,8 @@ const acBtn = document.querySelector("#acbtn"),
     eightBtn = document.querySelector('#eightBtn'),
     nineBtn = document.querySelector('#nineBtn');
     
-function callAlert() {
-    alert("Hello");
+function callAlert(name) {
+    alert(`Hello ${name}`);
 }
 
-acBtn.addEventListener('click', callAlert);
+acBtn.addEventListener('click', () => {callAlert('Abbos')});
