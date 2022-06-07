@@ -1,5 +1,5 @@
 let inputText = '0',
-    equalResult = '0',
+    equalResult = 0,
     displayText = document.querySelector('#displayText'),
     resultText = document.querySelector('#resultText');
 
@@ -25,11 +25,12 @@ const acBtn = document.querySelector("#acBtn"),
     
 function showString() {
     displayText.textContent = (inputText == '') ? 0: inputText;
+    resultText.textContent = equalResult;
 }
 
 acBtn.addEventListener('click', () => {
     inputText = '0'
-    equalResult = '0';
+    equalResult = 0;
     showString();
 });
 zeroBtn.addEventListener('click', () => {
@@ -202,5 +203,16 @@ dotBtn.addEventListener('click', () => {
 });
 eraseBtn.addEventListener('click', () => {
     inputText = inputText.slice(0, -1);
+    showString();
+});
+
+
+function counter(item, index, arr) {
+    equalResult += +item;
+}
+
+equalBtn.addEventListener('click', () => {
+    inputText.split('+').forEach(counter)
+
     showString();
 });
