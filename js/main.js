@@ -207,12 +207,49 @@ eraseBtn.addEventListener('click', () => {
 });
 
 
-function counter(item, index, arr) {
+function counterPlus(item, index, arr) {
     equalResult += +item;
 }
 
-equalBtn.addEventListener('click', () => {
-    inputText.split('+').forEach(counter)
+function counterMinus(item, index, arr) {
+    if (index == 0) {
+        equalResult += +item;
+    } else {
+        equalResult -= +item;
+    }
+}
 
+function counterMultiply(item, index, arr) {
+    if (index == 0) {
+        equalResult += +item;
+    } else {
+        equalResult *= +item;
+    }
+}
+
+function counterDivide(item, index, arr) {
+    if (index == 0) {
+        equalResult += +item;
+    } else {
+        equalResult /= +item;
+    }
+}
+
+equalBtn.addEventListener('click', () => {
+    // inputText.split('+').forEach(counter)
+    if (inputText.includes("+")) {
+        inputText.split('+').forEach(counterPlus)
+    }
+    else if (inputText.includes("-")) {
+        inputText.split('-').forEach(counterMinus)
+    }
+    else if (inputText.includes("x")) {
+        inputText.split('x').forEach(counterMultiply)
+    }
+    else if (inputText.includes("÷")) {
+        inputText.split('÷').forEach(counterDivide)
+    }
     showString();
+    inputText = `${equalResult}`;
+    equalResult = 0;
 });
