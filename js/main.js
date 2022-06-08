@@ -470,3 +470,7 @@ equalBtn.addEventListener('click', () => {
     inputText = `${equalResult}`;
     equalResult = 0;
 });
+
+function equalAll() {
+    
+}

@@ -32,8 +32,9 @@ p {
 .calculator {
     /* height: 500px; */
     width: 360px;
-    border: 2px solid yellow;
     border-radius: 20px;
+    background-color: black;
+    padding: 5px;
 }
 #displayBox {
     display: flex;
@@ -48,11 +49,13 @@ p {
 p {
     width: 100%;
     margin: 5px 0;
-    font-size: 20px;
+    font-size: 24px;
     font-family: Calibri, sans-serif;
     overflow-wrap: break-word;
     text-align: end;
     overflow-y: auto;
+    color: white;
+    letter-spacing: 1px;
 }
 #resultText::before {
     content: "=";
@@ -71,11 +74,9 @@ button {
     height: 80px;
     background-color: transparent;
     outline: none;
-    border: 2px solid white;
+    border: 2px solid black;
     font-size: 25px;
     font-weight: bold;
-    /* box-shadow: inset 0 0 25px 1px black; */
-    background-color: aqua;
     border-radius: 50% ;
 }
 button:active{
@@ -139,4 +140,16 @@ button:active{
     width: 170px;
     order: 19;
     border-radius: 50px;
+}
+.bgOrange{
+    background-color: #ff9604;
+    color: white;
+}
+.bgGrey{
+    background-color: #333333;
+    color: white;
+}
+.bgLight{
+    background-color: #a4a4a4;
+    color: black;
 }
