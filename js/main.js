@@ -140,6 +140,224 @@ nineBtn.addEventListener('click', () => {
         showString();
     }
 });
+
+document.addEventListener('keydown', (event) => {
+    var name = event.key;
+    var code = event.code;
+    /*
+    alert(`Key pressed ${name} \r\n Key code value: ${code}`);
+    */
+        switch (code) {
+            case 'Numpad1':
+                if (inputText.slice(0) == '0') {
+                    inputText = '';
+                    inputText += '1';
+                    showString();
+                } else {
+                    inputText += '1';
+                    showString();
+                }
+                break;
+
+            case 'Numpad2':
+                if (inputText.slice(0) == '0') {
+                    inputText = '';
+                    inputText += '2';
+                    showString();
+                } else {
+                    inputText += '2';
+                    showString();
+                }
+                break;
+
+            case 'Numpad3':
+                    if (inputText.slice(0) == '0') {
+                        inputText = '';
+                        inputText += '3';
+                        showString();
+                    } else {
+                        inputText += '3';
+                        showString();
+                    }
+                    break;
+        
+            case 'Numpad4':
+                    if (inputText.slice(0) == '0') {
+                        inputText = '';
+                        inputText += '4';
+                        showString();
+                    } else {
+                        inputText += '4';
+                        showString();
+                    }
+                    break;
+        
+            case 'Numpad5':
+                    if (inputText.slice(0) == '0') {
+                        inputText = '';
+                        inputText += '5';
+                        showString();
+                    } else {
+                        inputText += '5';
+                        showString();
+                    }
+                    break;
+        
+            case 'Numpad6':
+                    if (inputText.slice(0) == '0') {
+                        inputText = '';
+                        inputText += '6';
+                        showString();
+                    } else {
+                        inputText += '6';
+                        showString();
+                    }
+                    break;
+        
+            case 'Numpad7':
+                    if (inputText.slice(0) == '0') {
+                        inputText = '';
+                        inputText += '7';
+                        showString();
+                    } else {
+                        inputText += '7';
+                        showString();
+                    }
+                    break;
+        
+            case 'Numpad8':
+                    if (inputText.slice(0) == '0') {
+                        inputText = '';
+                        inputText += '8';
+                        showString();
+                    } else {
+                        inputText += '8';
+                        showString();
+                    }
+                    break;
+        
+            case 'Numpad9':
+                    if (inputText.slice(0) == '0') {
+                        inputText = '';
+                        inputText += '9';
+                        showString();
+                    } else {
+                        inputText += '9';
+                        showString();
+                    }
+                    break;
+        
+            case 'Numpad0':
+                if (inputText.slice(0) == '0') {
+                    showString();
+                } else {
+                    inputText += '0';
+                    showString();
+                }
+                break;
+
+            case 'NumpadDivide':
+                if (inputText.slice(-1) == '÷') {
+                    showString();
+                }
+                else if (inputText.slice(-1) == '.' || inputText.slice(-1) == '+' || inputText.slice(-1) == '-' || inputText.slice(-1) == 'x') {
+                inputText = inputText.slice(0, -1) + '÷';
+                showString();
+                }
+                else {
+                    inputText += '÷';
+                    showString();
+                }
+                break;
+
+            case 'NumpadMultiply':
+                if (inputText.slice(-1) == 'x') {
+                    showString();
+                }
+                else if (inputText.slice(-1) == '.' || inputText.slice(-1) == '+' || inputText.slice(-1) == '-' || inputText.slice(-1) == '÷') {
+                    inputText = inputText.slice(0, -1) + 'x';
+                    showString();
+                }
+                else {
+                    inputText += 'x';
+                    showString();
+                }
+                break;
+
+            case 'NumpadAdd':
+                if (inputText.slice(-1) == '+') {
+                    showString();
+                }
+                else if (inputText.slice(-1) == '.' || inputText.slice(-1) == 'x' || inputText.slice(-1) == '-' || inputText.slice(-1) == '÷') {
+                    inputText = inputText.slice(0, -1) + '+';
+                    showString();
+                }
+                else {
+                    inputText += '+';
+                    showString();
+                }
+                break;
+
+            case 'NumpadSubtract':
+                if (inputText.slice(-1) == '-') {
+                    showString();
+                }
+                else if (inputText.slice(-1) == '.' || inputText.slice(-1) == '+' || inputText.slice(-1) == 'x' || inputText.slice(-1) == '÷') {
+                    inputText = inputText.slice(0, -1) + '-';
+                    showString();
+                }
+                else {
+                    inputText += '-';
+                    showString();
+                }
+                break;
+
+            case 'NumpadDecimal':
+                if (inputText.slice(-1) == '.' || inputText.slice(-1) == '+' || inputText.slice(-1) == '-' || inputText.slice(-1) == 'x' || inputText.slice(-1) == '÷') {
+                    showString();
+                }
+                else {
+                    inputText += '.';
+                    showString();
+                }
+                break;
+
+            case 'Backspace':
+                inputText = inputText.slice(0, -1);
+                showString();
+                break;
+
+            case 'Delete':
+                inputText = '0';
+                equalResult = 0;
+                showString();
+                break;
+
+            case 'NumpadEnter':
+                if (inputText.includes("+")) {
+                    inputText.split('+').forEach(counterPlus)
+                }
+                else if (inputText.includes("-")) {
+                    inputText.split('-').forEach(counterMinus)
+                }
+                else if (inputText.includes("x")) {
+                    inputText.split('x').forEach(counterMultiply)
+                }
+                else if (inputText.includes("÷")) {
+                    inputText.split('÷').forEach(counterDivide)
+                }
+                showString();
+                inputText = `${equalResult}`;
+                equalResult = 0;
+                break;
+                    
+            default:
+            break;
+        }
+  }, false);
+
+
+
 plusBtn.addEventListener('click', () => {
     if (inputText.slice(-1) == '+') {
         showString();
@@ -236,7 +454,6 @@ function counterDivide(item, index, arr) {
 }
 
 equalBtn.addEventListener('click', () => {
-    // inputText.split('+').forEach(counter)
     if (inputText.includes("+")) {
         inputText.split('+').forEach(counterPlus)
     }
